@@ -75,6 +75,8 @@ Its fields are:
 ``auto_search`` (optional)
     whether a search should be performed immediately after loading the default
     view. Defaults to ``True``
+``multi`` (optional)
+    boolean - action is bound to lists, if ``multi`` is ``True``
 
 For instance, to open customers (partner with the ``customer`` flag set) with
 list and form views::
