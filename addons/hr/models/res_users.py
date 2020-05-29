@@ -15,7 +15,7 @@ class User(models.Model):
         result = super(User, self).write(vals)
         employee_values = {}
         for fname in [f for f in ['name', 'email', 'image', 'tz'] if f in vals]:
-            employee_values[fname] = vals[fname]
+            employee_values['work_email' if fname == 'email' else fname] = vals[fname]
         if employee_values:
             self.env['hr.employee'].sudo().search([('user_id', 'in', self.ids)]).write(employee_values)
         return result
